@@ -5,13 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
+  // Componentes
   declarations: [
-    AppComponent
+    AppComponent,
   ],
+  // Modulos
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
+  //Servicios y proveedores
   providers: [
     provideClientHydration()
   ],
