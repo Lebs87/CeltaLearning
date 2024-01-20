@@ -3,6 +3,8 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DashboardModule } from './layouts/dashboard/dashboard.module';
 
 @NgModule({
   // Componentes
@@ -12,7 +14,9 @@ import { AppComponent } from './app.component';
   // Modulos
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    DashboardModule
   ],
   //Servicios y proveedores
   providers: [

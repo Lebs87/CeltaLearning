@@ -1,0 +1,34 @@
+<div>
+	<app-students-form (studentSubmitted)="onStudentSubmitted($event)"></app-students-form>
+</div>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+	<ng-container matColumnDef="id">
+		<th mat-header-cell *matHeaderCellDef> No. </th>
+		<td mat-cell *matCellDef="let element"> {{ element.id }} </td>
+	</ng-container>
+
+	<ng-container matColumnDef="fullName">
+		<th mat-header-cell *matHeaderCellDef> Name </th>
+		<td mat-cell *matCellDef="let element"> {{ element.firstName + ' ' + element.lastName}} </td>
+	</ng-container>
+
+	<ng-container matColumnDef="documentID">
+		<th mat-header-cell *matHeaderCellDef> I.D. </th>
+		<td mat-cell *matCellDef="let element"> {{ element.documentID}} </td>
+	</ng-container>
+
+	<ng-container matColumnDef="email">
+		<th mat-header-cell *matHeaderCellDef> Email </th>
+		<td mat-cell *matCellDef="let element"> {{ element.email}} </td>
+	</ng-container>
+
+	<ng-container matColumnDef="role">
+		<th mat-header-cell *matHeaderCellDef> Role </th>
+		<td mat-cell *matCellDef="let element"> {{ element.role}} </td>
+	</ng-container>
+
+	<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+	<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

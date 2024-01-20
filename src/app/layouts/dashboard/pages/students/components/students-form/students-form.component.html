@@ -1,0 +1,44 @@
+<form [formGroup]="studentForm" (ngSubmit)="onSubmit()" class="container">
+    <div class="row">
+        <div class="col-6">
+            <mat-form-field class="w-100">
+                <mat-label>Nombre</mat-label>
+                <input formControlName="firstName" matInput type="text" />
+            </mat-form-field>
+        </div>
+        <div class="col-6">
+            <mat-form-field class="w-100">
+                <mat-label>Apellido</mat-label>
+                <input formControlName="lastName" matInput type="text" />
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <mat-form-field class="w-100">
+                <mat-label>I.D.</mat-label>
+                <input formControlName="documentID" matInput type="number" />
+            </mat-form-field>
+        </div>
+        <div class="col-6">
+            <mat-form-field class="w-100">
+                <mat-label>Email</mat-label>
+                <input formControlName="email" matInput type="email" />
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <mat-form-field class="w-100">
+                <mat-label>Rol</mat-label>
+                <mat-select formControlName="role">
+                    <mat-option value="ADMIN">ADMIN</mat-option>
+                    <mat-option value="USER">USER</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="col-12 flex justify-content-end pb-4">
+        <button mat-flat-button color="primary" type="submit">Guardar</button>
+    </div>
+</form>
