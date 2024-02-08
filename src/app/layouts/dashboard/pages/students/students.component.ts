@@ -11,7 +11,7 @@ export class StudentsComponent {
   displayedColumns: string[] = ['id', 'fullName', 'documentID', 'email', 'role'];
   dataSource: Student[] = [
     {id: 1, firstName: 'Luis', lastName: 'Belisario', documentID: '1234565789', email: 'luis@mail.com', password: '123456', role: 'admin'},
-    {id: 2, firstName: 'Luis2', lastName: 'Belisario2', documentID: '12234565789', email: 'luis2@mail.com', password: '123456', role: 'student'}
+    {id: 2, firstName: 'Luis Eduardo', lastName: 'Salcedo', documentID: '12234565789', email: 'luis2@mail.com', password: '123456', role: 'student'}
   ];
 
   onStudentSubmitted(ev: Student): void {

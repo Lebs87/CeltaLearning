@@ -30,3 +30,4 @@ Agregar servicios de las entidades que permitan el ABM de los mismos
 Utilizar estos servicios en los componentes.
 Modularizar la aplicación en app, core, shared y features modules.
 Utilizar la navegación de rutas desde el menú lateral.
+Array [animals.leng]
