@@ -13,6 +13,13 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../../../../shared/shared.module';
+//  SERVICIOS
+import { StudentsService } from '../../../../core/services/students.service';
+import { STUDENTS_TOKEN } from '../../../../core/injection-tokens';
+//import { StudentsMockService } from '../../../../core/services/students-mock.service';
+
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 
 @NgModule({
@@ -29,10 +36,24 @@ import { SharedModule } from '../../../../shared/shared.module';
     MatButtonModule,
     ReactiveFormsModule,
     SharedModule,
+    MatProgressSpinnerModule,
   ],
   exports: [
     StudentsComponent
-  ]
+  ],
+  providers: [
+    //Aqui comento estos servicios porque estoy inyectando los servicios desde el modulo de servicio con providedIn: 'root', si los descomentos los uso a ellos
+    StudentsService,
+    /* {
+      provide: StudentsService,
+      useClass: StudentsMockService
+    } */
 
+    //uso del use value
+    {
+      provide: STUDENTS_TOKEN,
+      useValue: 'Soy un valor que simula un UUID'
+    }
+  ]
 })
 export class StudentsModule { }

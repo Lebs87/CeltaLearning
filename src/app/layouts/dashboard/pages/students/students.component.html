@@ -2,7 +2,8 @@
 	<app-students-form (studentSubmitted)="onStudentSubmitted($event)"></app-students-form>
 </div>
 
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<mat-spinner *ngIf="loading"></mat-spinner>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="!loading">
 
 	<ng-container matColumnDef="id">
 		<th mat-header-cell *matHeaderCellDef> No. </th>
