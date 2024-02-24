@@ -3,10 +3,7 @@ import { CommonModule } from '@angular/common';
 import { StudentsModule } from './pages/students/students.module';
 import { DashboardComponent } from './dashboard.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatToolbarModule } from '@angular/material/toolbar';
-
+import { NavModule } from './navbar/nav/nav.module';
 
 @NgModule({
   declarations: [
@@ -15,10 +12,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
   imports: [
     CommonModule,
     StudentsModule,
-    MatButtonModule,
     MatSidenavModule,
-    MatIconModule,
-    MatToolbarModule
+    NavModule
   ],
   exports: [
     DashboardComponent

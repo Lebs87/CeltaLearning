@@ -17,9 +17,10 @@ export class StudentsComponent {
   ];
  
 
-  constructor(private loadingService : LoadingService){
+  constructor(private loadingService : LoadingService,  private studentsService: StudentsService){
 
   }
+
 
   onStudentSubmitted(ev: Student): void { 
     this.loadingService.setIsLoading(true);
