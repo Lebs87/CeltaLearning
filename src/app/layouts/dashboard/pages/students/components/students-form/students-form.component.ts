@@ -28,6 +28,7 @@ export class StudentsFormComponent {
     } else {
       this.studentSubmitted.emit(this.studentForm.value);
       this.studentForm.reset();
+      this.studentForm.markAsPristine();
     }
   }
 }

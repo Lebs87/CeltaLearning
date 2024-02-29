@@ -4,6 +4,10 @@ import { StudentsModule } from './pages/students/students.module';
 import { DashboardComponent } from './dashboard.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { NavModule } from './navbar/nav/nav.module';
+import { HomeModule } from './pages/home/home.module';
+import { RouterModule } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
+import { StudentsComponent } from './pages/students/students.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +17,13 @@ import { NavModule } from './navbar/nav/nav.module';
     CommonModule,
     StudentsModule,
     MatSidenavModule,
-    NavModule
+    NavModule,
+    HomeModule,
+    RouterModule.forChild([
+      { path: 'home', component: HomeComponent },
+      { path: 'home/:id', component: HomeComponent },
+      { path: 'students', component: StudentsComponent },
+    ])
   ],
   exports: [
     DashboardComponent

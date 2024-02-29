@@ -3,7 +3,6 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DashboardModule } from './layouts/dashboard/dashboard.module';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field'
 import { MatProgressSpinner, MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
@@ -17,7 +16,6 @@ import { MatProgressSpinner, MatProgressSpinnerModule } from '@angular/material/
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    DashboardModule,
     MatProgressSpinnerModule
   ],
   //Servicios y proveedores

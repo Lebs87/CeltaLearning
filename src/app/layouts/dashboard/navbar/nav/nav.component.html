@@ -1,22 +1,31 @@
 <mat-drawer #drawer class="example-sidenav" mode="side">
     <button type="button" class="btn-close float-end" aria-label="Close" (click)="drawer.toggle()"></button>
+    <mat-nav-list>
+        <a #homeLink="routerLinkActive" routerLinkActive [activated]="homeLink.isActive" routerLink="home" mat-list-item (click)="drawer.toggle()">Inicio</a>
+    </mat-nav-list>
     <h3 (click)="showStudents = !showStudents" class="navbarButtons">Alumnos</h3>
     @if (showStudents) {
-    <p>Todos</p>
-    <p>Web Developer</p>
-    <p>Angular</p>
+        <mat-nav-list>
+            <a #studentsLink="routerLinkActive" routerLinkActive [activated]="studentsLink.isActive" routerLink="students" mat-list-item (click)="drawer.toggle()">Todos</a>
+            <a #studentsLink="routerLinkActive" routerLinkActive [activated]="studentsLink.isActive" routerLink="students" mat-list-item (click)="drawer.toggle()">Web Developer</a>
+            <a #studentsLink="routerLinkActive" routerLinkActive [activated]="studentsLink.isActive" routerLink="students" mat-list-item (click)="drawer.toggle()">Angular</a>
+        </mat-nav-list>
     }
     <h3 (click)="showCourses = !showCourses" class="navbarButtons">Cursos</h3>
     @if (showCourses) {
-    <p>Todos</p>
-    <p>Web Developer</p>
-    <p>Angular</p>
+        <mat-nav-list>
+            <a routerLink="" mat-list-item >Todos</a>
+            <a routerLink="" mat-list-item >Web Developer</a>
+            <a routerLink="" mat-list-item >Angular</a>
+        </mat-nav-list>
     }
     <h3 (click)="showProfessor = !showProfessor" class="navbarButtons">Profesores</h3>
     @if (showProfessor) {
-    <p>Todos</p>
-    <p>Web Developer</p>
-    <p>Angular</p>
+        <mat-nav-list>
+            <a routerLink="" mat-list-item >Todos</a>
+            <a routerLink="" mat-list-item >Web Developer</a>
+            <a routerLink="" mat-list-item >Angular</a>
+        </mat-nav-list>
     }
 </mat-drawer>
 
