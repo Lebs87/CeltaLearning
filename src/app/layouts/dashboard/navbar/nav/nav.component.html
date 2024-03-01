@@ -14,7 +14,7 @@
     <h3 (click)="showCourses = !showCourses" class="navbarButtons">Cursos</h3>
     @if (showCourses) {
         <mat-nav-list>
-            <a routerLink="" mat-list-item >Todos</a>
+            <a #coursesLink="routerLinkActive" routerLinkActive [activated]="coursesLink.isActive" routerLink="courses" mat-list-item (click)="drawer.toggle()" >Todos</a>
             <a routerLink="" mat-list-item >Web Developer</a>
             <a routerLink="" mat-list-item >Angular</a>
         </mat-nav-list>
