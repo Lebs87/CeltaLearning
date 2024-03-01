@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Student } from './models/index';
+import { Students } from './models/index';
 import { StudentsService } from '../../../../core/services/students.service';
 import { LoadingService } from '../../../../core/services/loading.service';
 
@@ -10,8 +10,8 @@ import { LoadingService } from '../../../../core/services/loading.service';
 })
 
 export class StudentsComponent {
-  displayedColumns: string[] = ['id', 'fullName', 'documentID', 'email', 'role'];
-  dataSource: Student[] = [
+  displayedColumns: string[] = ['id', 'fullName', 'documentID', 'email', 'role', 'actions'];
+  dataSource: Students[] = [
     {id: 1, firstName: 'Luis', lastName: 'Belisario', documentID: '1234565789', email: 'luis@mail.com', password: '123456', role: 'admin'},
     {id: 2, firstName: 'Luis Eduardo', lastName: 'Salcedo', documentID: '12234565789', email: 'luis2@mail.com', password: '123456', role: 'student'}
   ];
@@ -22,7 +22,7 @@ export class StudentsComponent {
   }
 
 
-  onStudentSubmitted(ev: Student): void { 
+  onStudentSubmitted(ev: Students): void { 
     this.loadingService.setIsLoading(true);
     setTimeout(()=>{
     this.dataSource = [...this.dataSource, { ...ev, id: this.dataSource.length +1}]},3000)
