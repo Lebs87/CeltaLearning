@@ -23,7 +23,8 @@ import { StudentsComponent } from './pages/students/students.component';
       { path: 'home', component: HomeComponent },
       { path: 'home/:id', component: HomeComponent },
       { path: 'students', component: StudentsComponent },
-      { path: 'courses', loadChildren: () => import('./pages/courses/courses.module').then((m) => m.CoursesModule), }
+      { path: 'courses', loadChildren: () => import('./pages/courses/courses.module').then((m) => m.CoursesModule), },
+      { path: 'professors', loadChildren: () => import('./pages/professors/professors.module').then((m) => m.ProfessorsModule), }
     ])
   ],
   exports: [

@@ -8,17 +8,17 @@
 	</ng-container>
 
 	<ng-container matColumnDef="coursesName">
-		<th mat-header-cell *matHeaderCellDef> Fecha de Inicio </th>
+		<th mat-header-cell *matHeaderCellDef> Curso </th>
 		<td mat-cell *matCellDef="let element"> {{ element.coursesName }} </td>
 	</ng-container>
 
     <ng-container matColumnDef="startDate">
-		<th mat-header-cell *matHeaderCellDef> Fecha de Culminación </th>
+		<th mat-header-cell *matHeaderCellDef> Fecha de Inicio </th>
 		<td mat-cell *matCellDef="let element"> {{ element.startDate | date: 'dd/MM/YYYY hh:mm'  }} </td>
 	</ng-container>
     
     <ng-container matColumnDef="endDate">
-		<th mat-header-cell *matHeaderCellDef> Curso </th>
+		<th mat-header-cell *matHeaderCellDef> Fecha de Culminación </th>
 		<td mat-cell *matCellDef="let element"> {{ element.endDate | date: 'dd/MM/YYYY hh:mm' }} </td>
 	</ng-container>
 

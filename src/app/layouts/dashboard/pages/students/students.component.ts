@@ -11,21 +11,30 @@ import { LoadingService } from '../../../../core/services/loading.service';
 
 export class StudentsComponent {
   displayedColumns: string[] = ['id', 'fullName', 'documentID', 'email', 'role', 'actions'];
-  dataSource: Students[] = [
-    {id: 1, firstName: 'Luis', lastName: 'Belisario', documentID: '1234565789', email: 'luis@mail.com', password: '123456', role: 'admin'},
-    {id: 2, firstName: 'Luis Eduardo', lastName: 'Salcedo', documentID: '12234565789', email: 'luis2@mail.com', password: '123456', role: 'student'}
-  ];
+  students: Students[] = [];
  
-
   constructor(private loadingService : LoadingService,  private studentsService: StudentsService){
-
+    this.studentsService.getStudents().subscribe({
+      next: (students) => {
+        this.students = students;
+      },
+    });
   }
 
+  onDelete(id: number) {
+    if (confirm('¿Desea eliminar la selección?')) {
+      this.studentsService.deleteStudentById(id).subscribe({
+        next: (students) => {
+          this.students = students;
+        },
+      })
+    }
+  }
 
   onStudentSubmitted(ev: Students): void { 
     this.loadingService.setIsLoading(true);
     setTimeout(()=>{
-    this.dataSource = [...this.dataSource, { ...ev, id: this.dataSource.length +1}]},3000)
+    this.students = [...this.students, { ...ev, id: this.students.length +1}]},3000)
     setTimeout(()=>{
       this.loadingService.setIsLoading(false
         ) },5000)
