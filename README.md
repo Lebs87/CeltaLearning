@@ -1,9 +1,10 @@
-# Segunda Entrega de Proyecto Final CeltaLearnin
+# Proyecto Final CeltaLearnin
 
+Creación de un proyecto frontend basado en Angular para gestionar los asistentes a una serie de cursos
 
 Consigna
 
-Generar un proyecto Angular que contemple la administración de alumnos, clases y cursos, utilizando Angular Material. Ten en cuenta los aspectos técnicos y aspectos funcionales claves para que tu proyecto cumpla con los objetivos. Puedes ayudarte con la Rúbrica de la Primera Entrega del Proyecto Final.
+Con lo que se viene trabajando sumar las siguientes tareas: Incorporar un feature store para cada feature module + Incorporar la librería effects y consumir todas las API rest de allí. Sugerimos la lectura de la consigna detallada y las rúbricas de evaluación.
 
 Formato
 
@@ -19,15 +20,18 @@ Optimizar tu proyecto frontend basado en Angular, integrando lo trabajado en cla
 
 Objetivos específicos
 
-Añadir modulos especifícos.
-Creación de servicios que devuelvan un observable con datos mockeados.
-Uso de routing.
-Uso de angular material.
+Comprender el concepto de componentes y servicios, para su reutilización en otros proyectos.
+Comprender el concepto de módulos, lazy loading, rutas y la organización del proyecto en módulos core, share y feature
+Integrar el patrón de estado global Redux y comprender la importancia de su uso utilizando la librería Ngrx
+Realizar test unitarios del proyecto front end
 
 Aspectos a incluir en el entregable
 
-Agregar servicios de las entidades que permitan el ABM de los mismos
-Utilizar estos servicios en los componentes.
-Modularizar la aplicación en app, core, shared y features modules.
-Utilizar la navegación de rutas desde el menú lateral.
-Array [animals.leng]
+Diseño RedUx
+Store: acciones y reducers
+Selectores
+Feature store
+Effects
+El proyecto tiene que compilar.
+No tener errores por consola.
+No mostrar console.log().
