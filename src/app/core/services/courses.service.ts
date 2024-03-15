@@ -40,7 +40,7 @@ export class CoursesService {
   deleteCourseById(id: number) {
     this.loadingService.setIsLoading(true);
     courses = courses.filter((el) => el.id != id);
-    return of(courses).pipe(delay(1000), finalize(() => this.loadingService.setIsLoading(false)));
+    return this.getCourses();
   };
 
   private getNextId(): number {

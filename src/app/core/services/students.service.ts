@@ -1,5 +1,5 @@
 import { Injectable, Inject } from '@angular/core';
-import { STUDENTS_TOKEN } from '../injection-tokens';
+//import { STUDENTS_TOKEN } from '../injection-tokens';
 import { delay, finalize, of } from 'rxjs';
 import { Students } from '../../layouts/dashboard/pages/students/models';
 import { LoadingService } from './loading.service';
@@ -28,9 +28,35 @@ export class StudentsService {
     return of<Students[]>(students).pipe(delay(1000), finalize(()=> this.loadingService.setIsLoading(false)));
   };
 
+  createStudent(data: Students) {
+    const newId = this.getNextId();
+    const newStudent: Students = {
+      id: newId,
+      firstName: data.firstName,
+      lastName: data.lastName,
+      documentID: data.documentID,
+      email: data.email,
+      password: data.password,
+      role: data.role
+    };
+    students = [...students, newStudent];
+    return this.getStudents();
+  }
+
+  editStudentById(id: number, data: Students) {
+    students = students.map((el) => (el.id === id ? {...el, ...data} : el))
+    return this.getStudents();
+  }
+
   deleteStudentById(id: number) {
     this.loadingService.setIsLoading(true);
     students = students.filter((el)=> el.id != id);
-    return of(students).pipe(delay(1000), finalize(()=> this.loadingService.setIsLoading(false)));
+    return this.getStudents();
+  };
+
+  private getNextId(): number {
+    const ids = students.map(students => students.id);
+    const maxId = Math.max(...ids);
+    return maxId + 1;
   };
 }

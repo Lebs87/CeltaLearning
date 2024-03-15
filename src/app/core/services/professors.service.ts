@@ -20,6 +20,6 @@ export class ProfessorsService {
   deleteProfessorById(id: number) {
     this.loadingService.setIsLoading(true);
     professors = professors.filter((el) => el.id != id);
-    return of(professors).pipe(delay(1000), finalize(()=> this.loadingService.setIsLoading(false)));
+    return this.getProfessors();
   };
 }

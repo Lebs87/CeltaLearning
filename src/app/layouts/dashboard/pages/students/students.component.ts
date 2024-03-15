@@ -20,6 +20,10 @@ export class StudentsComponent {
     });
   }
 
+  onEdit(){
+    
+  }
+
   onDelete(id: number) {
     if (confirm('¿Desea eliminar la selección?')) {
       this.studentsService.deleteStudentById(id).subscribe({
