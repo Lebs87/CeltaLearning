@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StudentsComponent } from './students.component';
-import { StudentsFormComponent } from './components/students-form/students-form.component';
 import { SharedModule } from '../../../../shared/shared.module';
 //  SERVICIOS
 import { StudentsService } from '../../../../core/services/students.service';
 import { STUDENTS_TOKEN } from '../../../../core/injection-tokens';
+import { StudentsDialogComponent } from './students-dialog/students-dialog.component';
 //import { StudentsMockService } from '../../../../core/services/students-mock.service';
 
 @NgModule({
   declarations: [
     StudentsComponent,
-    StudentsFormComponent
+    StudentsDialogComponent
   ],
   imports: [
     CommonModule,

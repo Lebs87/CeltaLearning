@@ -1,5 +1,7 @@
-<div>
-	<app-students-form (studentSubmitted)="onStudentSubmitted($event)"></app-students-form>
+<h1>Estudiantes Celta Learning</h1>
+
+<div class="d-flex justify-content-center m-2">
+	<button color="primary" (click)="onCreate()" mat-button>Agregar Estudiante</button>
 </div>
 
 <table mat-table [dataSource]="students" class="mat-elevation-z8">
@@ -35,7 +37,7 @@
             <button (click)="onDelete(element.id)" mat-icon-button>
                 <mat-icon color="warn">delete</mat-icon>
             </button>
-            <button (click)="onEdit()" mat-icon-button>
+            <button (click)="onEdit(element)" mat-icon-button>
                 <mat-icon color="primary">edit</mat-icon>
             </button>
         </td>

@@ -38,7 +38,6 @@ export class CoursesService {
   }
 
   deleteCourseById(id: number) {
-    this.loadingService.setIsLoading(true);
     courses = courses.filter((el) => el.id != id);
     return this.getCourses();
   };

@@ -17,9 +17,34 @@ export class ProfessorsService {
     return of<Professors[]>(professors).pipe(delay(1000), finalize(()=> this.loadingService.setIsLoading(false)));
   };
 
+  createProfessor(data: Professors) {
+    const newId = this.getNextId();
+    const newProfessor: Professors = {
+      id: newId,
+      firstName: data.firstName,
+      lastName: data.lastName,
+      documentID: data.documentID,
+      email: data.email,
+      password: data.password,
+      role: data.role
+    };
+    professors = [...professors, newProfessor];
+    return this.getProfessors();
+  }
+
+  editProfessorById(id: number, data: Professors) {
+    professors = professors.map((el) => (el.id === id ? {...el, ...data} : el))
+    return this.getProfessors();
+  }
+
   deleteProfessorById(id: number) {
-    this.loadingService.setIsLoading(true);
     professors = professors.filter((el) => el.id != id);
     return this.getProfessors();
+  };
+
+  private getNextId(): number {
+    const ids = professors.map(professors => professors.id);
+    const maxId = Math.max(...ids);
+    return maxId + 1;
   };
 }

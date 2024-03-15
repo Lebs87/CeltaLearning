@@ -49,7 +49,6 @@ export class StudentsService {
   }
 
   deleteStudentById(id: number) {
-    this.loadingService.setIsLoading(true);
     students = students.filter((el)=> el.id != id);
     return this.getStudents();
   };

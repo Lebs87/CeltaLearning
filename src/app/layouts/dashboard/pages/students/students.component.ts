@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Students } from './models/index';
 import { StudentsService } from '../../../../core/services/students.service';
+import { MatDialog } from '@angular/material/dialog';
+import { StudentsDialogComponent } from './students-dialog/students-dialog.component';
 
 @Component({
   selector: 'app-students',
@@ -12,7 +14,7 @@ export class StudentsComponent {
   displayedColumns: string[] = ['id', 'fullName', 'documentID', 'email', 'role', 'actions'];
   students: Students[] = [];
  
-  constructor(private studentsService: StudentsService){
+  constructor(private studentsService: StudentsService, public dialog: MatDialog){
     this.studentsService.getStudents().subscribe({
       next: (students) => {
         this.students = students;
@@ -20,8 +22,30 @@ export class StudentsComponent {
     });
   }
 
-  onEdit(){
-    
+  onCreate(): void {
+    this.dialog.open(StudentsDialogComponent).afterClosed().subscribe({
+      next: (result) => {
+        if (result) {
+          this.studentsService.createStudent(result).subscribe({
+            next: (students) => (this.students = students),
+          });
+        }
+      }
+    })
+  }
+
+  onEdit(students: Students) {
+    this.dialog.open(StudentsDialogComponent, {
+      data: students,
+    }).afterClosed().subscribe({
+      next: (result) => {
+        if (result) {
+          this.studentsService.editStudentById(students.id, result).subscribe({
+            next: (students) => (this.students = students),
+          });
+        }
+      }
+    })
   }
 
   onDelete(id: number) {
@@ -34,6 +58,4 @@ export class StudentsComponent {
     }
   }
 
-  onStudentSubmitted(ev: Students): void { 
-    this.students = [...this.students, { ...ev, id: this.students.length +1}]}
 }

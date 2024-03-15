@@ -1,5 +1,9 @@
 <h1>Profesores Celta Learning</h1>
 
+<div class="d-flex justify-content-center m-2">
+	<button color="primary" (click)="onCreate()" mat-button>Agregar Profesor</button>
+</div>
+
 <table mat-table [dataSource]="professors" class="mat-elevation-z8">
 
 	<ng-container matColumnDef="id">
@@ -33,7 +37,7 @@
             <button (click)="onDelete(element.id)" mat-icon-button>
                 <mat-icon color="warn">delete</mat-icon>
             </button>
-            <button mat-icon-button>
+            <button (click)="onEdit(element)" mat-icon-button>
                 <mat-icon color="primary">edit</mat-icon>
             </button>
         </td>

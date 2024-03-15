@@ -4,11 +4,13 @@ import { ProfessorsRoutingModule } from './professors-routing.module';
 import { ProfessorsComponent } from './professors.component';
 import { SharedModule } from '../../../../shared/shared.module';
 import { ProfessorsService } from '../../../../core/services/professors.service';
+import { ProfessorsDialogComponent } from './professors-dialog/professors-dialog.component';
 
 
 @NgModule({
   declarations: [
-    ProfessorsComponent
+    ProfessorsComponent,
+    ProfessorsDialogComponent
   ],
   imports: [
     CommonModule,

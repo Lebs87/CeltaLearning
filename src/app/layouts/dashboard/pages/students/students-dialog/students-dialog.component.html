@@ -1,0 +1,48 @@
+<h2 mat-dialog-title>Agregar Estudiante</h2>
+<mat-dialog-content>
+    <form [formGroup]="studentForm">
+        <div class="d-flex justify-content-evenly">
+            <mat-form-field class="m-1 w-40">
+                <mat-label>Nombres</mat-label>
+                <input matInput formControlName="firstName">
+            </mat-form-field>
+        </div>
+        <div class="d-flex justify-content-evenly">
+            <mat-form-field class="m-1 w-40">
+                <mat-label>Apellidos</mat-label>
+                <input matInput formControlName="lastName">
+            </mat-form-field>
+        </div>
+        <div class="d-flex justify-content-evenly">
+            <mat-form-field class="m-1 w-40">
+                <mat-label>DNI</mat-label>
+                <input matInput formControlName="documentID">
+            </mat-form-field>
+        </div>
+        <div class="d-flex justify-content-evenly">
+            <mat-form-field class="m-1 w-40">
+                <mat-label>Correo</mat-label>
+                <input matInput formControlName="email" matInput type="email">
+            </mat-form-field>
+        </div>
+        <div class="d-flex justify-content-evenly">
+            <mat-form-field class="m-1 w-40">
+                <mat-label>Contraseña</mat-label>
+                <input matInput formControlName="password">
+            </mat-form-field>
+        </div>
+        <div class="d-flex justify-content-evenly">
+            <mat-form-field class="m-1 w-87">
+                <mat-label>Rol</mat-label>
+                <mat-select formControlName="role">
+                    <mat-option value="ADMIN">ADMIN</mat-option>
+                    <mat-option value="USER">USER</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-dialog-close mat-button color="warn">Cancelar</button>
+    <button mat-button (click)="onSave()" color="primary">Enviar</button>
+</mat-dialog-actions>
