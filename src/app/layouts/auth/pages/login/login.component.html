@@ -1,1 +1,39 @@
-<p>login works!</p>
+<div class="authLoginContainer">
+	<div class="authLoginBg">
+	<mat-card>
+		<mat-card-header>
+			<mat-card-title>
+				<h2>Iniciar Sesión:</h2>
+			</mat-card-title>
+		</mat-card-header>
+		<mat-card-content>
+			<form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+				<div class="d-flex justify-content-center m-1 flex-column">
+					<mat-form-field appearance="fill">
+						<mat-label>Correo Electrónico</mat-label>
+						<input matInput type="email" formControlName="email" required>
+						<mat-error>{{
+							loginForm.get("email")?.errors | validationErrors
+						}}</mat-error>
+					</mat-form-field>
+
+					<mat-form-field appearance="fill">
+						<mat-label>Contraseña</mat-label>
+						<input matInput [type]="showPassword ? 'text' : 'password'" formControlName="password" required>
+						<button (click)="showPassword = !showPassword" matSuffix mat-icon-button>
+							<mat-icon>visibility</mat-icon>
+						</button>
+						<mat-error>{{
+							loginForm.get("password")?.errors | validationErrors
+						}}</mat-error>
+					</mat-form-field>
+				</div>
+				<div class="d-flex justify-content-center">
+					<button mat-flat-button color="primary" class="m-1" (click)="onSubmit()">Iniciar Sesión</button>
+					<button mat-flat-button color="warn" class="m-1" routerLink="/">Regresar</button>
+				</div>
+			</form>
+		</mat-card-content>
+	</mat-card>
+</div>
+</div>

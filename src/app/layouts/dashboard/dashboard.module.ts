@@ -5,9 +5,7 @@ import { DashboardComponent } from './dashboard.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { NavModule } from './navbar/nav/nav.module';
 import { HomeModule } from './pages/home/home.module';
-import { RouterModule } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { StudentsComponent } from './pages/students/students.component';
+import { DashboardRoutingModule } from './dashboard-routing.module';
 
 @NgModule({
   declarations: [
@@ -19,13 +17,7 @@ import { StudentsComponent } from './pages/students/students.component';
     MatSidenavModule,
     NavModule,
     HomeModule,
-    RouterModule.forChild([
-      { path: 'home', component: HomeComponent },
-      { path: 'home/:id', component: HomeComponent },
-      { path: 'students', component: StudentsComponent },
-      { path: 'courses', loadChildren: () => import('./pages/courses/courses.module').then((m) => m.CoursesModule), },
-      { path: 'professors', loadChildren: () => import('./pages/professors/professors.module').then((m) => m.ProfessorsModule), }
-    ])
+    DashboardRoutingModule
   ],
   exports: [
     DashboardComponent

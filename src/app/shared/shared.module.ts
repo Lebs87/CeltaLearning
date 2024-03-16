@@ -18,6 +18,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { DateAdapter, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MAT_DATE_FORMATS } from '@angular/material/core';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
+import {MatCardModule} from '@angular/material/card';
+import { ValidationErrorsPipe } from './pipes/validation-errors.pipe';
 
 export const MY_DATE_FORMATS = {
   parse: {
@@ -34,7 +36,8 @@ export const MY_DATE_FORMATS = {
 @NgModule({
   declarations: [
     FullNamePipe,
-    TableTitlesDirective
+    TableTitlesDirective,
+    ValidationErrorsPipe
   ],
   imports: [
     CommonModule
@@ -43,6 +46,7 @@ export const MY_DATE_FORMATS = {
     FullNamePipe,
     TableTitlesDirective,
     MatTableModule,
+    ValidationErrorsPipe,
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
@@ -55,6 +59,7 @@ export const MY_DATE_FORMATS = {
     MatListModule,
     MatDialogModule,
     MatDatepickerModule,
+    MatCardModule,
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'es-ES' },

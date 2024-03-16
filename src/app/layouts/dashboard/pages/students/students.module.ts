@@ -6,6 +6,7 @@ import { SharedModule } from '../../../../shared/shared.module';
 import { StudentsService } from '../../../../core/services/students.service';
 import { STUDENTS_TOKEN } from '../../../../core/injection-tokens';
 import { StudentsDialogComponent } from './students-dialog/students-dialog.component';
+import { StudentsRoutingModule } from './students-routing.module';
 //import { StudentsMockService } from '../../../../core/services/students-mock.service';
 
 @NgModule({
@@ -15,6 +16,7 @@ import { StudentsDialogComponent } from './students-dialog/students-dialog.compo
   ],
   imports: [
     CommonModule,
+    StudentsRoutingModule,
     SharedModule,
   ],
   exports: [
