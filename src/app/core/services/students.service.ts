@@ -5,8 +5,8 @@ import { Students } from '../../layouts/dashboard/pages/students/models';
 import { LoadingService } from './loading.service';
 
 let students: Students[] = [
-  {id: 1, firstName: 'Luis', lastName: 'Belisario', documentID: '1234565789', email: 'luis@mail.com', password: '123456', role: 'admin'},
-  {id: 2, firstName: 'Luis Eduardo', lastName: 'Salcedo', documentID: '12234565789', email: 'luis2@mail.com', password: '123456', role: 'student'}
+  {id: 1, firstName: 'Luis', lastName: 'Belisario', documentID: '1234565789', email: 'luis@mail.com', password: '123456', role: 'ADMIN'},
+  {id: 2, firstName: 'Luis Eduardo', lastName: 'Salcedo', documentID: '12234565789', email: 'luis2@mail.com', password: '123456', role: 'STUDENT'}
 ];
 
 /* @Injectable(

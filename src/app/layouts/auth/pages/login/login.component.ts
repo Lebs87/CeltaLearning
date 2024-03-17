@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { LoadingService } from '../../../../core/services/loading.service';
 import { AuthService } from '../../../../core/services/auth.service';
 
 @Component({
@@ -24,8 +23,7 @@ export class LoginComponent {
     if (this.loginForm.invalid) {
       this.loginForm.markAllAsTouched();
     } else {
-      console.log(this.loginForm.value)
-      this.authService.login();
+      this.authService.login(this.loginForm.value);
     }
   }
 }

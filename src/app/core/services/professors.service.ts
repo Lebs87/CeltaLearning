@@ -4,8 +4,8 @@ import { Professors } from '../../layouts/dashboard/pages/professors/models';
 import { LoadingService } from './loading.service';
 
 let professors: Professors[] = [
-  {id: 1, firstName: 'Daniel', lastName: 'Belisario', documentID: '1234565789', email: 'luis@mail.com', password: '123456', role: 'admin'},
-  {id: 2, firstName: 'Daniel Eduardo', lastName: 'Salcedo', documentID: '12234565789', email: 'luis2@mail.com', password: '123456', role: 'student'}
+  {id: 1, firstName: 'Daniel', lastName: 'Belisario', documentID: '1234565789', email: 'luis@mail.com', password: '123456', role: 'ADMIN'},
+  {id: 2, firstName: 'Daniel Eduardo', lastName: 'Salcedo', documentID: '12234565789', email: 'luis2@mail.com', password: '123456', role: 'STUDENT'}
 ];
 
 @Injectable()
