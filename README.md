@@ -36,11 +36,27 @@ El proyecto tiene que compilar.
 No tener errores por consola.
 No mostrar console.log().
 
-Mail de acceso
+### Comandos de terminal
+
+#### Correr el Frontend
+Estando en una terminal, sobre la carpeta raíz del proyecto, correr el comando:
+```
+ng s -o
+```
+#### Correr el MockBackend
+Estando en una terminal, sobre la carpeta raíz del proyecto, ir a la carpeta mock-backend 
+```
+cd mock-backend
+```
+y correr el comando:
+```
+npx json-server db.json
+```
+#### Mail mock de acceso
 ```
 bene@gmail.com
 ```
-Contraseña de acceso
+#### Contraseña mock de acceso
 ```
 12345
 ```

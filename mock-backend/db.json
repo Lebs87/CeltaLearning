@@ -1,0 +1,89 @@
+{
+    "courses": [
+        {
+            "id": 1,
+            "coursesName": "Angular",
+            "startDate": "2024-04-14",
+            "startTime": "18:00",
+            "endDate": "2024-12-14",
+            "endTime": "19:00"
+        },
+        {
+            "id": 2,
+            "coursesName": "React",
+            "startDate": "2024-04-14",
+            "startTime": "19:00",
+            "endDate": "2024-12-14",
+            "endTime": "20:00"
+        }
+    ],
+    "students": [
+        {
+            "id": 1,
+            "firstName": "Luis",
+            "lastName": "Belisario",
+            "documentID": "1234565789",
+            "email": "luis@mail.com",
+            "password": "123456",
+            "role": "ADMIN"
+        },
+        {
+            "id": 2,
+            "firstName": "Luis Eduardo",
+            "lastName": "Salcedo",
+            "documentID": "12234565789",
+            "email": "luis2@mail.com",
+            "password": "123456",
+            "role": "STUDENT"
+        },
+        {
+            "id": 3,
+            "firstName": "Daniel",
+            "lastName": "Belisario",
+            "documentID": "12345659",
+            "email": "luis3@mail.com",
+            "password": "123456",
+            "role": "ADMIN"
+        },
+        {
+            "id": 4,
+            "firstName": "Jorge",
+            "lastName": "Salcedo",
+            "documentID": "122365789",
+            "email": "luis42@mail.com",
+            "password": "123456",
+            "role": "STUDENT"
+        }
+    ],
+    "professors": [
+        {
+            "id": 1,
+            "firstName": "Daniel",
+            "lastName": "Belisario",
+            "documentID": "1234565789",
+            "email": "luis@mail.com",
+            "password": "123456",
+            "role": "ADMIN"
+        },
+        {
+            "id": 2,
+            "firstName": "Daniel Eduardo",
+            "lastName": "Salcedo",
+            "documentID": "12234565789",
+            "email": "luis2@mail.com",
+            "password": "123456",
+            "role": "PROFESSOR"
+        }
+    ],
+    "users": [
+        {
+            "id": 3,
+            "firstName": "Luis",
+            "lastName": "Benedeti",
+            "documentID": "12345",
+            "email": "bene@gmail.com",
+            "password": "12345",
+            "role": "ADMIN"
+        }
+    ]
+}

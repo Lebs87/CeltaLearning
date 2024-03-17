@@ -3,6 +3,7 @@ import { Injectable, Inject } from '@angular/core';
 import { delay, finalize, of } from 'rxjs';
 import { Students } from '../../layouts/dashboard/pages/students/models';
 import { LoadingService } from './loading.service';
+import { HttpClient } from '@angular/common/http';
 
 let students: Students[] = [
   {id: 1, firstName: 'Luis', lastName: 'Belisario', documentID: '1234565789', email: 'luis@mail.com', password: '123456', role: 'ADMIN'},
@@ -21,11 +22,12 @@ export class StudentsService {
   /*constructor(@Inject(STUDENTS_TOKEN) studentToken: string, private loadingService: LoadingService) { 
     console.log(` estoy usando un useValue para inyectar un token: ${studentToken}` )
   } */
-  constructor(private loadingService: LoadingService){}
+  constructor(private loadingService: LoadingService, private httpClient: HttpClient){}
 
   getStudents() {
     this.loadingService.setIsLoading(true);
-    return of<Students[]>(students).pipe(delay(1000), finalize(()=> this.loadingService.setIsLoading(false)));
+    //return of<Students[]>(students).pipe(delay(1000), finalize(()=> this.loadingService.setIsLoading(false)));
+    return this.httpClient.get<Students[]>('http://localhost:3000/students').pipe(finalize(()=> this.loadingService.setIsLoading(false)))
   };
 
   createStudent(data: Students) {
