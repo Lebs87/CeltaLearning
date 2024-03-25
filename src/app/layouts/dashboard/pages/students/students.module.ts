@@ -7,12 +7,14 @@ import { StudentsService } from '../../../../core/services/students.service';
 import { STUDENTS_TOKEN } from '../../../../core/injection-tokens';
 import { StudentsDialogComponent } from './students-dialog/students-dialog.component';
 import { StudentsRoutingModule } from './students-routing.module';
+import { StudentDetailComponent } from './student-detail/student-detail.component';
 //import { StudentsMockService } from '../../../../core/services/students-mock.service';
 
 @NgModule({
   declarations: [
     StudentsComponent,
-    StudentsDialogComponent
+    StudentsDialogComponent,
+    StudentDetailComponent
   ],
   imports: [
     CommonModule,
